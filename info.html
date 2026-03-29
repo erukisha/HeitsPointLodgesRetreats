@@ -1,0 +1,1203 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Lodging & Rentals | Heit's Point Lutheran Ministries</title>
+
+  <style>
+    :root {
+      --green: #2f5d3a;
+      --green-dark: #23472c;
+      --tan: #f4f1ec;
+      --tan-dark: #e7e0d4;
+      --cream: #fffdf8;
+      --white: #ffffff;
+      --text: #2e2e2e;
+      --muted: #555555;
+      --gold: #d7b46a;
+      --shadow: 0 10px 24px rgba(0, 0, 0, 0.08);
+      --shadow-hover: 0 16px 30px rgba(0, 0, 0, 0.14);
+      --radius: 20px;
+    }
+
+    * {
+      box-sizing: border-box;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      margin: 0;
+      font-family: "Segoe UI", Arial, sans-serif;
+      background: var(--tan);
+      color: var(--text);
+      line-height: 1.65;
+    }
+
+    img {
+      display: block;
+      max-width: 100%;
+    }
+
+    a {
+      color: inherit;
+      text-decoration: none;
+    }
+
+    h1, h2, h3 {
+      font-family: "Trebuchet MS", Arial, sans-serif;
+      color: var(--green);
+      margin: 0 0 12px 0;
+      line-height: 1.1;
+    }
+
+    p {
+      margin: 0 0 16px 0;
+    }
+
+    section {
+      padding: 78px 8%;
+    }
+
+    .container {
+      max-width: 1200px;
+      margin: 0 auto;
+    }
+
+    .section-header {
+      text-align: center;
+      max-width: 900px;
+      margin: 0 auto 40px;
+    }
+
+    .section-header h2 {
+      font-size: 2.45rem;
+      margin-bottom: 12px;
+    }
+
+    .section-header p {
+      font-size: 1.08rem;
+      color: #4a4a4a;
+    }
+
+    .btn-row {
+      display: flex;
+      gap: 14px;
+      flex-wrap: wrap;
+    }
+
+    .btn {
+      display: inline-block;
+      padding: 13px 22px;
+      border-radius: 999px;
+      font-size: 1rem;
+      font-weight: 700;
+      transition: 0.2s ease;
+    }
+
+    .btn-primary {
+      background: var(--gold);
+      color: #2f2418;
+    }
+
+    .btn-primary:hover {
+      background: #e2c07a;
+      transform: translateY(-2px);
+    }
+
+    .btn-secondary {
+      background: rgba(255,255,255,0.12);
+      border: 1px solid rgba(255,255,255,0.24);
+      color: #ffffff;
+    }
+
+    .btn-secondary:hover {
+      background: rgba(255,255,255,0.18);
+      transform: translateY(-2px);
+    }
+
+    /* HERO */
+    .hero {
+      background:
+        linear-gradient(rgba(47, 93, 58, 0.74), rgba(47, 93, 58, 0.74)),
+        url("lodging-hero.png") center/cover no-repeat;
+      color: #ffffff;
+      padding: 100px 8% 92px;
+    }
+
+    .hero-inner {
+      max-width: 1200px;
+      margin: 0 auto;
+      display: grid;
+      grid-template-columns: 1.08fr 0.92fr;
+      gap: 34px;
+      align-items: center;
+    }
+
+    .hero-logo {
+      width: 140px;
+      max-width: 42vw;
+      margin-bottom: 20px;
+      filter: drop-shadow(0 8px 18px rgba(0,0,0,0.22));
+    }
+
+    .hero-eyebrow {
+      display: inline-block;
+      margin-bottom: 16px;
+      padding: 8px 14px;
+      border-radius: 999px;
+      background: rgba(255,255,255,0.12);
+      border: 1px solid rgba(255,255,255,0.18);
+      color: #f4ead8;
+      font-size: 13px;
+      font-weight: bold;
+      letter-spacing: 0.8px;
+      text-transform: uppercase;
+    }
+
+    .hero h1 {
+      font-size: 3.35rem;
+      line-height: 0.98;
+      color: #ffffff;
+      margin-bottom: 18px;
+    }
+
+    .hero p {
+      font-size: 1.14rem;
+      color: #f4f1eb;
+      max-width: 720px;
+    }
+
+    .hero-card {
+      background: rgba(255,255,255,0.16);
+      border: 1px solid rgba(255,255,255,0.20);
+      backdrop-filter: blur(8px);
+      border-radius: 24px;
+      padding: 28px;
+      box-shadow: 0 18px 36px rgba(0,0,0,0.16);
+    }
+
+    .hero-card h3 {
+      color: #ffffff;
+      font-size: 1.7rem;
+      margin-bottom: 12px;
+    }
+
+    .hero-card p {
+      color: #f7f4ef;
+      font-size: 1rem;
+      margin-bottom: 16px;
+    }
+
+    .hero-list {
+      list-style: none;
+      padding: 0;
+      margin: 0;
+      display: grid;
+      gap: 10px;
+    }
+
+    .hero-list li {
+      padding: 12px 14px;
+      border-radius: 14px;
+      background: rgba(255,255,255,0.12);
+      color: #ffffff;
+      font-size: 0.97rem;
+      font-weight: 600;
+    }
+
+    /* QUICK INFO */
+    .quick-info-bar {
+      background: #fffaf4;
+      padding: 28px 8%;
+      border-top: 1px solid #e4ddd1;
+      border-bottom: 1px solid #e4ddd1;
+    }
+
+    .quick-info-inner {
+      max-width: 1200px;
+      margin: 0 auto;
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 18px;
+    }
+
+    .quick-info-card {
+      background: #ffffff;
+      border: 1px solid #e7e0d4;
+      border-radius: 16px;
+      padding: 20px;
+      box-shadow: 0 8px 18px rgba(0, 0, 0, 0.06);
+      text-align: center;
+    }
+
+    .quick-info-card h3 {
+      font-size: 1.08rem;
+      margin-bottom: 8px;
+    }
+
+    .quick-info-card p {
+      margin: 0;
+      font-size: 0.95rem;
+      color: #4a4a4a;
+    }
+
+    /* INTRO */
+    .intro-section {
+      background: var(--cream);
+      border-top: 1px solid #e8dfd1;
+      border-bottom: 1px solid #e8dfd1;
+    }
+
+    .intro-grid {
+      max-width: 1200px;
+      margin: 0 auto;
+      display: grid;
+      grid-template-columns: 1.05fr 0.95fr;
+      gap: 28px;
+      align-items: stretch;
+    }
+
+    .intro-text h2 {
+      font-size: 2.35rem;
+      margin-bottom: 14px;
+    }
+
+    .intro-text p {
+      font-size: 1.04rem;
+      color: #454545;
+    }
+
+    .intro-card {
+      background: var(--white);
+      border-left: 8px solid var(--green);
+      border-radius: var(--radius);
+      padding: 28px;
+      box-shadow: var(--shadow);
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+    }
+
+    .intro-card h3 {
+      font-size: 1.5rem;
+      margin-bottom: 12px;
+    }
+
+    .intro-card p {
+      font-size: 1rem;
+      color: #4b4b4b;
+    }
+
+    /* FEATURE SECTION */
+    .feature-section {
+      background: linear-gradient(rgba(255,255,255,0.96), rgba(255,255,255,0.96));
+      border-top: 6px solid var(--green);
+      border-bottom: 6px solid var(--green);
+    }
+
+    .feature-wrapper {
+      max-width: 1200px;
+      margin: 0 auto;
+      display: grid;
+      grid-template-columns: 1.05fr 0.95fr;
+      gap: 34px;
+      align-items: center;
+    }
+
+    .feature-photo {
+      border-radius: 22px;
+      overflow: hidden;
+      box-shadow: var(--shadow-hover);
+      min-height: 420px;
+      background: #d8d8d8;
+    }
+
+    .feature-photo img {
+      width: 100%;
+      height: 100%;
+      min-height: 420px;
+      object-fit: cover;
+    }
+
+    .feature-content h2 {
+      font-size: 2.45rem;
+      margin-bottom: 14px;
+    }
+
+    .feature-content p {
+      font-size: 1.04rem;
+      color: #464646;
+    }
+
+    .feature-box {
+      margin-top: 16px;
+      background: var(--tan);
+      border-left: 8px solid var(--gold);
+      padding: 24px;
+      border-radius: 18px;
+      box-shadow: var(--shadow);
+    }
+
+    .feature-box h3 {
+      font-size: 1.45rem;
+      margin-bottom: 10px;
+    }
+
+    .price-line {
+      font-size: 1.08rem;
+      font-weight: 700;
+      color: var(--green-dark);
+      margin-bottom: 10px;
+    }
+
+    /* CATEGORY SECTIONS */
+    .category-section {
+      background: var(--tan);
+    }
+
+    .category-section.alt {
+      background: #fdfaf5;
+    }
+
+    .lodging-grid {
+      max-width: 1200px;
+      margin: 0 auto;
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: 26px;
+    }
+
+    .lodging-card {
+      background: var(--white);
+      border-radius: 18px;
+      overflow: hidden;
+      box-shadow: 0 10px 24px rgba(0, 0, 0, 0.08);
+      transition: transform 0.25s ease, box-shadow 0.25s ease;
+      display: flex;
+      flex-direction: column;
+      min-height: 100%;
+      border: 1px solid #e8dfd1;
+    }
+
+    .lodging-card:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 14px 28px rgba(0, 0, 0, 0.14);
+    }
+
+    .lodging-photo {
+      width: 100%;
+      height: 220px;
+      object-fit: cover;
+      background: #d8d8d8;
+    }
+
+    .lodging-card-body {
+      padding: 22px;
+      display: flex;
+      flex-direction: column;
+      height: 100%;
+    }
+
+    .lodging-meta {
+      display: inline-block;
+      align-self: flex-start;
+      margin-bottom: 12px;
+      padding: 7px 12px;
+      border-radius: 999px;
+      background: #edf3ed;
+      color: var(--green);
+      font-size: 0.88rem;
+      font-weight: 700;
+    }
+
+    .lodging-card h3 {
+      font-size: 1.42rem;
+      margin-bottom: 10px;
+    }
+
+    .price {
+      font-size: 1.06rem;
+      font-weight: 700;
+      color: var(--green-dark);
+      margin-bottom: 12px;
+    }
+
+    .lodging-description {
+      font-size: 0.98rem;
+      color: #4a4a4a;
+      margin-bottom: 14px;
+    }
+
+    .lodging-list {
+      list-style: none;
+      padding: 0;
+      margin: auto 0 0 0;
+      display: grid;
+      gap: 8px;
+    }
+
+    .lodging-list li {
+      background: var(--tan);
+      border-radius: 10px;
+      padding: 10px 12px;
+      font-size: 0.94rem;
+      color: #3f3f3f;
+      font-weight: 600;
+    }
+
+    /* RV + TENT SHARED */
+    .rv-tent-section {
+      background: #fffdf8;
+      border-top: 1px solid #e6ddd1;
+      border-bottom: 1px solid #e6ddd1;
+    }
+
+    .rv-tent-layout {
+      max-width: 1200px;
+      margin: 0 auto;
+      display: grid;
+      grid-template-columns: 0.95fr 1.05fr;
+      gap: 28px;
+      align-items: start;
+    }
+
+    .rv-tent-map-wrap {
+      position: sticky;
+      top: 24px;
+      align-self: start;
+      border-radius: 20px;
+      overflow: hidden;
+      box-shadow: var(--shadow);
+      border: 1px solid #e8dfd1;
+      background: var(--white);
+      padding: 14px;
+    }
+
+    .rv-tent-map {
+      width: 100%;
+      height: auto;
+      object-fit: contain;
+      display: block;
+      background: #ffffff;
+      border-radius: 12px;
+    }
+
+    .rv-tent-content {
+      display: flex;
+      flex-direction: column;
+      gap: 24px;
+    }
+
+    /* AMENITIES */
+    .amenities-section {
+      background: #fdfaf5;
+      border-top: 1px solid #e6ddd1;
+      border-bottom: 1px solid #e6ddd1;
+    }
+
+    .amenities-grid {
+      max-width: 1200px;
+      margin: 0 auto;
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: 24px;
+    }
+
+    .amenities-card {
+      background: var(--white);
+      border: 1px solid #e8dfd1;
+      border-radius: 18px;
+      padding: 24px;
+      box-shadow: var(--shadow);
+      transition: transform 0.25s ease, box-shadow 0.25s ease;
+    }
+
+    .amenities-card:hover {
+      transform: translateY(-4px);
+      box-shadow: var(--shadow-hover);
+    }
+
+    .amenities-card h3 {
+      font-size: 1.3rem;
+      margin-bottom: 10px;
+    }
+
+    .amenities-card p {
+      margin: 0;
+      font-size: 0.98rem;
+      color: #4a4a4a;
+    }
+
+    /* CTA */
+    .cta {
+      background: var(--green);
+      color: var(--white);
+      text-align: center;
+      padding: 68px 20px;
+    }
+
+    .cta h2 {
+      font-size: 2.55rem;
+      margin-bottom: 18px;
+      color: var(--white);
+    }
+
+    .cta p {
+      font-size: 1.08rem;
+      max-width: 820px;
+      margin: 0 auto 18px auto;
+      line-height: 1.6;
+    }
+
+    .contact-buttons {
+      display: inline-flex;
+      justify-content: center;
+      gap: 15px;
+      flex-wrap: wrap;
+      margin-top: 8px;
+    }
+
+    .contact-btn {
+      background: var(--tan);
+      border: none;
+      border-radius: 10px;
+      padding: 12px 22px;
+      font-size: 1rem;
+      cursor: pointer;
+      color: var(--green);
+      font-weight: bold;
+      transition: background 0.25s ease, transform 0.2s ease;
+    }
+
+    .contact-btn:hover {
+      background: var(--tan-dark);
+      transform: translateY(-2px);
+    }
+
+    #toast {
+      visibility: hidden;
+      min-width: 180px;
+      background-color: #6d6be8;
+      color: #fff;
+      text-align: center;
+      border-radius: 8px;
+      padding: 12px;
+      position: fixed;
+      z-index: 1000;
+      left: 50%;
+      transform: translateX(-50%);
+      bottom: 30px;
+      font-size: 1rem;
+      opacity: 0;
+      transition: opacity 0.5s ease, bottom 0.5s ease;
+    }
+
+    #toast.show {
+      visibility: visible;
+      opacity: 1;
+      bottom: 50px;
+    }
+
+    /* RESPONSIVE */
+    @media (max-width: 1100px) {
+      .hero-inner,
+      .intro-grid,
+      .feature-wrapper,
+      .rv-tent-layout {
+        grid-template-columns: 1fr;
+      }
+
+      .quick-info-inner {
+        grid-template-columns: repeat(2, 1fr);
+      }
+
+      .lodging-grid,
+      .amenities-grid {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+      }
+
+      .rv-tent-map-wrap {
+        position: static;
+      }
+    }
+
+    @media (max-width: 768px) {
+      section {
+        padding: 58px 5%;
+      }
+
+      .hero {
+        padding: 74px 5%;
+      }
+
+      .hero h1 {
+        font-size: 2.45rem;
+      }
+
+      .hero-logo {
+        width: 110px;
+      }
+
+      .section-header h2,
+      .feature-content h2,
+      .intro-text h2,
+      .cta h2 {
+        font-size: 2rem;
+      }
+
+      .lodging-grid,
+      .quick-info-inner,
+      .amenities-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .feature-photo,
+      .feature-photo img {
+        min-height: 300px;
+      }
+    }
+
+    @media (max-width: 500px) {
+      .contact-btn {
+        width: 100%;
+        max-width: 300px;
+      }
+
+      .hero h1 {
+        font-size: 2.05rem;
+      }
+    }
+
+    @media (hover: none) {
+      .lodging-card:hover,
+      .amenities-card:hover,
+      .contact-btn:hover,
+      .btn:hover {
+        transform: none;
+        box-shadow: var(--shadow);
+      }
+    }
+  </style>
+</head>
+
+<body>
+
+  <section class="hero">
+    <div class="hero-inner">
+      <div>
+        <img src="Logo.png" alt="Heit's Point Logo" class="hero-logo">
+
+        <div class="hero-eyebrow">Heit’s Point Lutheran Ministries</div>
+
+        <h1>Lodging and Rentals at Heit’s Point</h1>
+
+        <p>
+          Perfect for your family, church group, reunion, or a quiet getaway, Heit’s Point offers
+          welcoming lodging options for restful weekends, retreat gatherings, and memorable time together
+          at the Lake of the Ozarks.
+        </p>
+
+        <div class="btn-row" style="margin-top: 22px;">
+          <a href="#book" class="btn btn-primary">Book Your Stay</a>
+          <a href="#lodging-options" class="btn btn-secondary">Explore Lodging</a>
+        </div>
+      </div>
+
+      <div class="hero-card">
+        <h3>Plan Your Stay</h3>
+        <p>
+          We are open year round for retreats of all kinds including family, church, business,
+          and personal getaway stays.
+        </p>
+
+        <ul class="hero-list">
+          <li>Please call <strong>660-668-2363</strong> to book your stay</li>
+          <li>Email booking questions to <strong>info@heitspointlutheran.org</strong></li>
+          <li>You can book up to <strong>2 years in advance</strong></li>
+          <li>Options for couples, families, small groups, and large retreats</li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <section class="quick-info-bar">
+    <div class="quick-info-inner">
+      <div class="quick-info-card">
+        <h3>Open Year Round</h3>
+        <p>Available for family retreats, church groups, reunions, and peaceful overnight stays.</p>
+      </div>
+
+      <div class="quick-info-card">
+        <h3>Flexible Lodging</h3>
+        <p>Choose from hotel style rooms, cabins, bunkhouses, RV sites, and tent camping.</p>
+      </div>
+
+      <div class="quick-info-card">
+        <h3>Great for Groups</h3>
+        <p>From quiet getaways to large retreat gatherings, there is a place for every type of stay.</p>
+      </div>
+
+      <div class="quick-info-card">
+        <h3>Book Ahead</h3>
+        <p>Reserve your preferred dates up to 2 years in advance.</p>
+      </div>
+    </div>
+  </section>
+
+  <section class="intro-section">
+    <div class="intro-grid">
+      <div class="intro-text">
+        <h2>A Place to Rest, Gather, and Enjoy Time Together</h2>
+        <p>
+          Heit’s Point offers a variety of lodging options for families, church groups,
+          reunions, retreats, and peaceful getaways at the Lake of the Ozarks.
+        </p>
+        <p>
+          Whether you are looking for a cozy cabin, hotel style room, bunkhouse lodging
+          for a group, or an RV site, we would love to help you find the best fit for your stay.
+        </p>
+      </div>
+
+      <div class="intro-card">
+        <h3>Family Retreats</h3>
+        <p>
+          Are you looking for a great place to host your next family gathering. Heit’s Point is a
+          welcoming place for family retreats, church retreats, business retreats, reunions, and quiet weekends away.
+        </p>
+        <p>
+          We look forward to seeing you at the Point.
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <section class="feature-section" id="lodging-options">
+    <div class="feature-wrapper">
+      <div class="feature-photo">
+        <img src="spitz.png" alt="Spitz Retreat Center at Heit's Point">
+      </div>
+
+      <div class="feature-content">
+        <h2>Spitz Retreat Center</h2>
+        <p>
+          Spitz Retreat Center is a great option for guests looking for a comfortable,
+          hotel style stay while enjoying the peaceful setting of Heit’s Point.
+        </p>
+        <p>
+          It works especially well for couples, individuals, retreat leaders, or anyone wanting
+          a simple and restful place to stay during a retreat or getaway.
+        </p>
+
+        <div class="feature-box">
+          <h3>Hotel Like Rooms</h3>
+          <div class="price-line">$90 per night for the first two guests</div>
+          <p>
+            A welcoming option for guests who want comfort, convenience, and easy access
+            to all the beauty and amenities that Heit’s Point has to offer.
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="category-section alt">
+    <div class="section-header">
+      <h2>Cabins</h2>
+      <p>
+        Cozy and comfortable spaces for families and smaller groups looking for a more private stay at the Point.
+      </p>
+    </div>
+
+    <div class="lodging-grid">
+      <div class="lodging-card">
+        <img src="cabin1.png" alt="Cabin 1 at Heit's Point" class="lodging-photo">
+        <div class="lodging-card-body">
+          <div class="lodging-meta">Sleeps 8</div>
+          <h3>Cabin #1</h3>
+          <div class="price">$90 per night for the first two guests</div>
+          <p class="lodging-description">
+            A cozy cabin option for families or small groups looking for a peaceful stay at the Point.
+          </p>
+          <ul class="lodging-list">
+            <li>$20 per night for each additional guest</li>
+            <li>Kids 4 and under are free</li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="lodging-card">
+        <img src="cabin2.png" alt="Lake Front Cabin 2 at Heit's Point" class="lodging-photo">
+        <div class="lodging-card-body">
+          <div class="lodging-meta">Sleeps 4</div>
+          <h3>Lake Front Cabin #2</h3>
+          <div class="price">$90 per night for the first two guests</div>
+          <p class="lodging-description">
+            A relaxing lake front stay that is perfect for couples, small families, or a quiet getaway.
+          </p>
+          <ul class="lodging-list">
+            <li>$20 per night for each additional guest</li>
+            <li>Kids 4 and under are free</li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="lodging-card">
+        <img src="cabin3.png" alt="Lake Front Cabin 3 at Heit's Point" class="lodging-photo">
+        <div class="lodging-card-body">
+          <div class="lodging-meta">Sleeps 6</div>
+          <h3>Lake Front Cabin #3</h3>
+          <div class="price">$90 per night for the first two guests</div>
+          <p class="lodging-description">
+            A comfortable lake front cabin for families or small groups wanting time to rest and reconnect.
+          </p>
+          <ul class="lodging-list">
+            <li>$20 per night for each additional guest</li>
+            <li>Kids 4 and under are free</li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="lodging-card">
+        <img src="heitman-house.png" alt="Original Heitman House at Heit's Point" class="lodging-photo">
+        <div class="lodging-card-body">
+          <div class="lodging-meta">Sleeps 2</div>
+          <h3>Original Heitman House</h3>
+          <div class="price">$90 per night</div>
+          <p class="lodging-description">
+            A simple and cozy option for guests looking for a peaceful and quiet stay.
+          </p>
+          <ul class="lodging-list">
+            <li>Great for a couple or personal retreat</li>
+            <li>Private and restful atmosphere</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="category-section">
+    <div class="section-header">
+      <h2>Bunkhouses</h2>
+      <p>
+        Affordable group lodging for church groups, reunions, camps, and larger retreat gatherings.
+      </p>
+    </div>
+
+    <div class="lodging-grid">
+      <div class="lodging-card">
+        <img src="blunk.png" alt="Blunk Bunkhouse at Heit's Point" class="lodging-photo">
+        <div class="lodging-card-body">
+          <div class="lodging-meta">Sleeps 60</div>
+          <h3>Blunk Bunkhouse</h3>
+          <div class="price">$20 per night per person</div>
+          <p class="lodging-description">
+            A spacious bunkhouse option that works well for large group stays and retreat weekends.
+          </p>
+          <ul class="lodging-list">
+            <li>Minimum of $100 per night</li>
+            <li>Best for larger groups</li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="lodging-card">
+        <img src="gospel-hostel.png" alt="Gospel Hostel at Heit's Point" class="lodging-photo">
+        <div class="lodging-card-body">
+          <div class="lodging-meta">Sleeps 48</div>
+          <h3>Gospel Hostel</h3>
+          <div class="price">$20 per night per person</div>
+          <p class="lodging-description">
+            A practical bunkhouse choice for groups wanting shared lodging and a welcoming retreat setting.
+          </p>
+          <ul class="lodging-list">
+            <li>Minimum of $100 per night</li>
+            <li>Bunkhouse style group lodging</li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="lodging-card">
+        <img src="gcl.png" alt="GCL Bunkhouse at Heit's Point" class="lodging-photo">
+        <div class="lodging-card-body">
+          <div class="lodging-meta">Sleeps 20</div>
+          <h3>GCL Bunkhouse</h3>
+          <div class="price">$20 per night per person</div>
+          <p class="lodging-description">
+            God Changes Lives. A smaller bunkhouse option that is great for mid sized groups and retreat teams.
+          </p>
+          <ul class="lodging-list">
+            <li>Minimum of $100 per night</li>
+            <li>Great for smaller retreat groups</li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="lodging-card">
+        <img src="bell-house.png" alt="Bell House at Heit's Point" class="lodging-photo">
+        <div class="lodging-card-body">
+          <div class="lodging-meta">Sleeps 24</div>
+          <h3>Bell House</h3>
+          <div class="price">$20 per night per person</div>
+          <p class="lodging-description">
+            A welcoming bunkhouse option for smaller group stays, gatherings, and overnight retreats.
+          </p>
+          <ul class="lodging-list">
+            <li>Minimum of $100 per night</li>
+            <li>Bunkhouse style lodging for groups</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="rv-tent-section">
+    <div class="section-header">
+      <h2>RV and Tent Sites</h2>
+      <p>
+        Whether you are bringing an RV or planning a more traditional camping stay,
+        Heit’s Point offers outdoor lodging options with beautiful surroundings and access
+        to the amenities that make your stay comfortable and enjoyable.
+      </p>
+    </div>
+
+    <div class="rv-tent-layout">
+      <div class="rv-tent-map-wrap">
+        <img src="rv-tent-map.png" alt="Map of RV and tent sites at Heit's Point" class="rv-tent-map">
+      </div>
+
+      <div class="rv-tent-content">
+        <div class="lodging-card">
+          <img src="rv-sites.png" alt="RV and camper sites at Heit's Point" class="lodging-photo">
+          <div class="lodging-card-body">
+            <div class="lodging-meta">17 Sites Available</div>
+            <h3>RV and Camper Sites</h3>
+            <div class="price">$40 a night</div>
+            <p class="lodging-description">
+              Heit’s Point offers 17 RV and Camper sites available for rent. These sites are a great option
+              for guests who want the flexibility of RV travel while enjoying the peaceful setting of camp.
+            </p>
+            <ul class="lodging-list">
+              <li>30 amp or 50 amp electric connection</li>
+              <li>Full water and sewer hookups</li>
+              <li>Fire ring and picnic table included</li>
+              <li>Access to all the amenities Heit’s Point has to offer</li>
+            </ul>
+          </div>
+        </div>
+
+        <div class="lodging-card">
+          <img src="tent-sites.png" alt="Tent sites at Heit's Point" class="lodging-photo">
+          <div class="lodging-card-body">
+            <div class="lodging-meta">Outdoor Camping</div>
+            <h3>Tent Sites</h3>
+            <div class="price">$15 per night</div>
+            <p class="lodging-description">
+              A simple and affordable camping option for guests who want to enjoy the outdoors
+              and experience a more traditional stay at Heit’s Point.
+            </p>
+            <ul class="lodging-list">
+              <li>Beautiful outdoor camping atmosphere</li>
+              <li>Great for a traditional camping experience</li>
+              <li>Close to the same general area shown on the site map</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="amenities-section">
+    <div class="section-header">
+      <h2>Camp Amenities</h2>
+      <p>
+        When you stay at Heit’s Point, you are not just reserving lodging. You are also enjoying access
+        to a wide range of spaces and activities that help make your stay comfortable, fun, and memorable.
+      </p>
+    </div>
+
+    <div class="amenities-grid">
+      <div class="amenities-card">
+        <h3>🍽️ Spacious Dining Hall</h3>
+        <p>
+          A welcoming place for shared meals, fellowship, and gathering together during your stay.
+        </p>
+      </div>
+
+      <div class="amenities-card">
+        <h3>🏀 Gymnasium</h3>
+        <p>
+          Great for indoor games, group activities, recreation, and retreat programming in any weather.
+        </p>
+      </div>
+
+      <div class="amenities-card">
+        <h3>🏕️ Covered Pavilion</h3>
+        <p>
+          A flexible outdoor gathering space for meals, meetings, fellowship, and group activities.
+        </p>
+      </div>
+
+      <div class="amenities-card">
+        <h3>🏐 Volleyball Court</h3>
+        <p>
+          A fun place for casual games, team play, and enjoying time together outdoors.
+        </p>
+      </div>
+
+      <div class="amenities-card">
+        <h3>⚽ Athletic Field</h3>
+        <p>
+          Open space for sports, group games, recreation, and retreat activities.
+        </p>
+      </div>
+
+      <div class="amenities-card">
+        <h3>9️⃣ 9 Square</h3>
+        <p>
+          A favorite activity for groups of all ages that brings energy, laughter, and connection.
+        </p>
+      </div>
+
+      <div class="amenities-card">
+        <h3>🌊 Lake Access</h3>
+        <p>
+          Enjoy the beauty of the lake during your stay with peaceful views and waterfront access.
+        </p>
+      </div>
+
+      <div class="amenities-card">
+        <h3>🛶 Canoes</h3>
+        <p>
+          A great option for guests who want to spend time on the water and enjoy the outdoors.
+        </p>
+      </div>
+
+      <div class="amenities-card">
+        <h3>🥾 Trails</h3>
+        <p>
+          Explore the natural beauty of Heit’s Point through peaceful walks and outdoor time on the trails.
+        </p>
+      </div>
+
+      <div class="amenities-card">
+        <h3>🤝 Team Building Challenge Course</h3>
+        <p>
+          A meaningful activity space for groups looking to build trust, communication, and teamwork.
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <section class="cta" id="book">
+    <h2>Book Your Stay at Heit’s Point</h2>
+    <p>
+      Please call <strong>660-668-2363</strong> to book a stay at Heit’s Point Lutheran.
+      You can also reach out by email at <strong>info@heitspointlutheran.org</strong>.
+      Bookings are available up to 2 years in advance.
+    </p>
+
+    <div class="contact-buttons">
+      <button class="contact-btn" data-copy="660-668-2363">📞 660-668-2363</button>
+      <button class="contact-btn" data-copy="info@heitspointlutheran.org">✉️ info@heitspointlutheran.org</button>
+    </div>
+
+    <div id="toast"></div>
+  </section>
+<footer style="background:linear-gradient(135deg,#1f3b2d,#2e5a43); color:#f5f1e8; padding:35px 15px; font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;">
+  <div style="max-width:1100px; margin:0 auto;">
+
+    <!-- Title -->
+    <div style="text-align:center; margin-bottom:25px;">
+      <h2 style="margin:0; font-size:26px; letter-spacing:1px; color:#f3d58a;">
+        HEIT'S POINT LUTHERAN MINISTRIES
+      </h2>
+    </div>
+
+    <!-- Content -->
+    <div style="display:flex; flex-wrap:wrap; justify-content:space-between; gap:25px; font-size:14px;">
+
+      <!-- Mission -->
+      <div style="flex:1; min-width:220px;">
+        <h3 style="margin-bottom:8px; font-size:16px; color:#f3d58a;">Mission</h3>
+        <p style="margin:0; line-height:1.6;">
+          Strengthening your Connection with Christ, the Vine
+        </p>
+        <p style="margin-top:4px; font-size:13px; color:#d8c9a8;">
+          John 15:5
+        </p>
+      </div>
+
+      <!-- Contact -->
+      <div style="flex:1; min-width:220px;">
+        <h3 style="margin-bottom:8px; font-size:16px; color:#f3d58a;">Contact</h3>
+
+        <p style="margin:0 0 6px;">
+          28345 Heits Point Ave.<br>
+          Lincoln, MO 65338
+        </p>
+
+        <p style="margin:0 0 6px;">
+          <a href="tel:6606682363" style="color:#f5f1e8; text-decoration:none;">
+            📞 660-668-2363
+          </a>
+        </p>
+
+        <p style="margin:0;">
+          <a href="mailto:info@heitspointlutheran.org" style="color:#f5f1e8; text-decoration:none;">
+            ✉️ info@heitspointlutheran.org
+          </a>
+        </p>
+      </div>
+
+      <!-- Social -->
+      <div style="flex:1; min-width:180px;">
+        <h3 style="margin-bottom:8px; font-size:16px; color:#f3d58a;">Follow</h3>
+
+        <!-- Facebook -->
+        <a href="https://www.facebook.com/heitspointlutherancamp" target="_blank"
+           style="display:flex; align-items:center; gap:8px; margin-bottom:8px; text-decoration:none; color:#f5f1e8;">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor">
+            <path d="M22 12a10 10 0 1 0-11.5 9.9v-7H7.9v-2.9h2.6V9.4c0-2.6 1.5-4 3.8-4 1.1 0 2.2.2 2.2.2v2.4h-1.2c-1.2 0-1.6.7-1.6 1.5v1.8h2.7l-.4 2.9h-2.3v7A10 10 0 0 0 22 12z"/>
+          </svg>
+          Facebook
+        </a>
+
+        <!-- Instagram -->
+        <a href="https://www.instagram.com/heitspointlutheran/" target="_blank"
+           style="display:flex; align-items:center; gap:8px; text-decoration:none; color:#f5f1e8;">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor">
+            <path d="M7 2C4.2 2 2 4.2 2 7v10c0 2.8 2.2 5 5 5h10c2.8 0 5-2.2 5-5V7c0-2.8-2.2-5-5-5H7zm10 2c1.7 0 3 1.3 3 3v10c0 1.7-1.3 3-3 3H7c-1.7 0-3-1.3-3-3V7c0-1.7 1.3-3 3-3h10zm-5 3.5A5.5 5.5 0 1 0 17.5 13 5.5 5.5 0 0 0 12 7.5zm0 9A3.5 3.5 0 1 1 15.5 13 3.5 3.5 0 0 1 12 16.5zM17.8 6.2a1.2 1.2 0 1 0 1.2 1.2 1.2 1.2 0 0 0-1.2-1.2z"/>
+          </svg>
+          Instagram
+        </a>
+
+      </div>
+
+    </div>
+
+  </div>
+</footer>
+  <script>
+    const contactButtons = document.querySelectorAll('.contact-btn');
+    const toast = document.getElementById('toast');
+
+    contactButtons.forEach(btn => {
+      btn.addEventListener('click', () => {
+        const text = btn.getAttribute('data-copy');
+        navigator.clipboard.writeText(text).then(() => {
+          toast.textContent = text.includes('@') ? 'Email copied!' : 'Phone number copied!';
+          toast.classList.add('show');
+          setTimeout(() => {
+            toast.classList.remove('show');
+          }, 2000);
+        });
+      });
+    });
+  </script>
+
+</body>
+</html>
